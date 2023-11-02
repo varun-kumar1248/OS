@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+pid_t pid=getpid();
+pid_t parent_pid=getpid();
+printf("current position ID:%D\n",pid);
+printf("parent process ID:%D\n",parent_pid);
+return 0;
+}
