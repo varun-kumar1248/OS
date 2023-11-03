@@ -279,6 +279,49 @@ ALGORITHM STEPS:-
    - If processes[i].remainingTime becomes 0:
    
    - Decrement remainingProcesses by 1.
+   - #9-> INTER-PROCESS COMMUNICATION USING SHARED MEMORY:-
+
+ALGORITHM STEPS:-
+
+=>Producer (writer.c):
+
+1)Start
+
+2)Generate a unique key for the shared memory using ftok.
+
+3)Create a shared memory segment using shmget.
+
+4)Attach to the shared memory segment using shmat.
+
+5)Read an integer value from the user.
+
+6)Write the integer value to the shared memory.
+
+7)Detach from the shared memory using shmdt.
+
+8)End.
+
+=>Consumer (reader.c):
+
+1)Start
+
+2)Generate the same unique key for the shared memory using ftok.
+
+3)Get the shared memory segment using shmget.
+
+4)Attach to the shared memory segment using shmat.
+
+5)Read the integer value from the shared memory.
+
+6)Display the value read from the shared memory.
+
+7)Detach from the shared memory using shmdt.
+
+8)Remove the shared memory segment using shmctl.
+
+9)End.
+
+CSA0483-OS/README.md at main ·
    
    - Display that process i has completed its execution.
 
